@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+   th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Note</title>
+</head>
+<body>
+<section>
+
+<div class="container mt-2">
+<div class="row">
+<div class="col-md 10 offset-md-1">
+<div class="card">
+<div class="card-header text-center" style="background-color:	rgb(120,120,120);">
+<h3> Edit Note </h3>
+
+   <th:block th:if="${session.msg}">
+            <p class="text-center text-danger fs-4">[[${session.msg}]] </p>
+             <th:block th:text="${@empServiceImpl.removeSessionMessage()}"></th:block>  
+     
+     </th:block>
+</div>
+<div class="card-body" style="background-color:		rgb(160,160,160);">
+<form action="/user/updateNotes" method="post">
+<div class="mb-3">
+<label>Enter Title</label>
+<input type="text" name="title" th:value="${n.title}" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Enter Description</label>
+<textarea rows="6" cols="" name="description" class="form-control">[[${n.description}]]</textarea>
+</div>
+<input type="hidden" name="id" th:value="${n.id}">
+<div  style="text-align: center;">
+<button class="btn btn-primary mt-4">Save</button>
+</div>
+
+</form>
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+</section>
+</body>
+</html>

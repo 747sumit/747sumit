@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org"
+   th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section class="text-center">
+<h1>Admin Profile Page</h1>
+<h6>Name: [[${emp.name}]]</h6>
+<h6>Name: [[${emp.email}]]</h6>
+<h6>Name: [[${emp.mobilenumber}]]</h6>
+<h6>Name: [[${emp.role}]]</h6>
+<a href="/logout">Logout</a>
+</section>
+
+</body>
+</html>
